@@ -11,3 +11,14 @@ def about(request):
 
 def service(request):
     return render(request, 'pages/services.html')
+
+def skill(request):
+    return render(request, 'pages/skill.html')
+
+def contact(request):
+    return render(request, 'pages/contact.html')
+
+
+# backend dashboard
+def index(request):
+    return render(request, 'back/index.html')
