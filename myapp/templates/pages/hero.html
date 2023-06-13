@@ -1,21 +1,97 @@
-  {% load static %}
-    <!-- Hero section -->
-        <div class="hero" style="background-image: url({% static 'image/background.jpg' %});">
+{% extends "pages/main.html" %} 
+{% load static %}
 
-            <!-- start content -->
-            <div class="content">
-                <h4>Hello, my name is</h4>
-                <h1>Than  <span>Than </span>Soe</h1>
-                <h3>I am a web Developer</h3>
+{% block content %}
+<!-- Hero section -->
+<div class="hero" style="background-image: url({% static 'image/background.jpg' %});">
 
-                <div class="newslatter">
-                    <form>
-                        <input type="email" name="email" id="mail" placeholder="Enter your email">
-                        <input type="submit" value="submit" value="Lets Start">
-                    </form>
-                </div>
-            </div>
-            <!-- end content -->
+    <!-- start content -->
+    <div class="content">
+        <h4>Hello, my name is</h4>
+        <h1>Than  <span>Than </span>Soe</h1>
+        <h3>I am a web Developer</h3>
 
+        <div class="newslatter">
+            <form>
+                <input type="email" name="email" id="mail" placeholder="Enter your email">
+                <input type="submit" value="submit" value="Lets Start">
+            </form>
         </div>
-    <!-- end hero section -->
+    </div>
+    <!-- end content -->
+
+</div>
+<!-- end hero section -->
+
+
+<!-- About section -->
+<section class="about">
+    <div class="main">
+        <img src="{% static  'image/about1.jpg' %}" alt="">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <h5>Developer <span> & Designer </span></h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis aperiam accusantium assumenda exercitationem natus ab. Rem ipsum, sunt tenetur perferendis autem pariatur laboriosam tempore consequatur. Consectetur iste ratione facilis.</p>
+            <button type="button">Let's Talk</button>
+        </div>
+    </div>
+</section>
+<!-- end about section -->
+
+
+<!-- services -->
+<div class="service">
+    <div class="title">
+        <h2>Our services</h2>
+    </div>
+
+    <div class="box">
+        <div class="card">
+            <i class="fas fa-bars"></i>
+            <h5>Web Development</h5>
+            <div class="pra">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto ratione, itaque nisi pariatur voluptatibus blanditiis? </p>
+
+                <p style="text-align: center;">
+                    <a href="#" class="button">Read More</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-user"></i>
+            <h5>Web Development</h5>
+            <div class="pra">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto ratione, itaque nisi pariatur voluptatibus blanditiis? </p>
+
+                <p style="text-align: center;">
+                    <a href="#" class="button">Read More</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-bell"></i>
+            <h5>Web Development</h5>
+            <div class="pra">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa architecto ratione, itaque nisi pariatur voluptatibus blanditiis? </p>
+
+                <p style="text-align: center;">
+                    <a href="#" class="button">Read More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<!-- end services -->
+
+<!-- Contact me -->
+<div class="contact">
+    <p>Let Me Get You A Beautiful Website.</p>
+    <a href="#" class="button-two">Hire Me</a>
+</div>
+<!-- end contact -->
+
+{% endblock content %} 
+    

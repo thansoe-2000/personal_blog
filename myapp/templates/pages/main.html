@@ -21,9 +21,9 @@
 
             <h2 class="logo">Than<span>Soe</span></h2>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="{% url 'heropage' %}">Home</a></li>
+                <li><a href="{% url 'aboutpage' %}">About Me</a></li>
+                <li><a href="{% url 'servicepage' %}">Services</a></li>
                 <li><a href="#">Skill</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -31,27 +31,17 @@
         </nav>
     <!-- end navbar -->
 
+    {% block content %}
+    
+    {% endblock content %}
         
-        
-        <!-- Hero section -->
-        {% include "pages/hero.html" %}
-        <!-- end hero section -->
+       
 
 
-        <!-- About section -->
-        {% include "pages/about.html" %}
-        <!-- end about section -->
+      
 
 
 
-        <!-- services -->
-        {% include "pages/services.html" %}
-        <!-- end services -->
-
-
-        <!-- Contact me -->
-        {% include "pages/contact.html" %}
-        <!-- end contact -->
 
 
         <!-- start footer html -->
