@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero section -->
-<div class="hero" style="background-image: url({% static 'image/background.jpg' %});">
 
+<!-- Hero section -->
+{% for hero in heros %}
+<div class="hero" style="background-image: url('{{ hero.background.url }}')">
     <!-- start content -->
     <div class="content">
         <h4>Hello, my name is</h4>
-        {% for hero in heros %}
         <h1>{{ hero.name }}</h1>
         <h3>{{ hero.carrier }}</h3>
-        {% endfor %}
+{% endfor %}
         
 
         <div class="newslatter">

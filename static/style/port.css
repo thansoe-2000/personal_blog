@@ -8,6 +8,7 @@
  .hero{
    height: 100vh;
    width: 100%;
+   background-repeat:no-repeat;
    background-size: cover;
    background-position: center;
    
@@ -162,7 +163,6 @@
 
   .about-text p{
    color: #fcfc;
-   justify-content: center;
    letter-spacing: 1px;
    line-height: 28px;
    font-size: 18px;
