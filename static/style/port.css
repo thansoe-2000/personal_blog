@@ -129,7 +129,7 @@
   }
   .about img{
    height: auto;
-   width: 430px;
+   width: 400px;
   }
 
   .about-text{
@@ -162,6 +162,7 @@
 
   .about-text p{
    color: #fcfc;
+   justify-content: center;
    letter-spacing: 1px;
    line-height: 28px;
    font-size: 18px;

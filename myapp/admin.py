@@ -7,4 +7,10 @@ class HeroAdmin(admin.ModelAdmin):
         'id', 'name', 'background', 'carrier'
     ]
 
+class AboutAdmin(admin.ModelAdmin):
+    list_display = [
+        'id', 'title', 'body', 'image'
+    ]
+
 admin.site.register(Hero, HeroAdmin)
+admin.site.register(About, AboutAdmin)

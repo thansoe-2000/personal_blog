@@ -8,8 +8,11 @@
     <!-- start content -->
     <div class="content">
         <h4>Hello, my name is</h4>
-        <h1>Than  <span>Than </span>Soe</h1>
-        <h3>I am a web Developer</h3>
+        {% for hero in heros %}
+        <h1>{{ hero.name }}</h1>
+        <h3>{{ hero.carrier }}</h3>
+        {% endfor %}
+        
 
         <div class="newslatter">
             <form>
@@ -27,11 +30,15 @@
 <!-- About section -->
 <section class="about">
     <div class="main">
-        <img src="{% static  'image/about1.jpg' %}" alt="">
+        {% for about in abouts %}
+        <img src="{{ about.image.url }}" alt="">
         <div class="about-text">
             <h2>About Me</h2>
-            <h5>Developer <span> & Designer </span></h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis aperiam accusantium assumenda exercitationem natus ab. Rem ipsum, sunt tenetur perferendis autem pariatur laboriosam tempore consequatur. Consectetur iste ratione facilis.</p>
+            <h5>{{ about.title }}</h5>
+            <p>{{ about.body}} </p> 
+
+        {% endfor %}
+            
             <button type="button">Let's Talk</button>
         </div>
     </div>

@@ -1,17 +1,20 @@
 {% extends "pages/main.html" %}
-{% block content %}
 {% load static %}
+{% block content %}
 <!-- About section -->
-        <section class="about">
-            <div class="main">
-                <img src="{% static  'image/about1.jpg' %}" alt="">
-                <div class="about-text">
-                    <h2>About Me</h2>
-                    <h5>Developer <span> & Designer </span></h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reiciendis aperiam accusantium assumenda exercitationem natus ab. Rem ipsum, sunt tenetur perferendis autem pariatur laboriosam tempore consequatur. Consectetur iste ratione facilis.</p>
-                    <button type="button">Let's Talk</button>
-                </div>
-            </div>
-        </section>
+<section class="about">
+    <div class="main">
+        {% for about in abouts %}
+        <img src="{{ about.image.url }}" alt="">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <h5>{{ about.title }}</h5>
+            <p>{{ about.body}}</p>
+        {% endfor %}
+            
+            <button type="button">Let's Talk</button>
+        </div>
+    </div>
+</section>
 <!-- end about section -->
 {% endblock content %}
