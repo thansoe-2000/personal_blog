@@ -26,6 +26,8 @@ def service(request):
 def skill(request):
     return render(request, 'pages/skill.html')
 
+def gallary(request):
+    return render(request, 'pages/gallary.html')
 def contact(request):
     return render(request, 'pages/contact.html')
 
