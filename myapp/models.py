@@ -17,3 +17,16 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+class Gallary(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='gallary-image', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
