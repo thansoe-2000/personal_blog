@@ -4,13 +4,13 @@
 <!-- About section -->
 <section class="about">
     <div class="main">
-        {% for about in abouts %}
-        <img src="{{ about.image.url }}" alt="">
+        
+        <img src="{{ abouts.image.url }}" alt="">
         <div class="about-text">
             <h2>About Me</h2>
-            <h5>{{ about.title }}</h5>
-            <p>{{ about.body}}</p>
-        {% endfor %}
+            <h5>{{ abouts.title }}</h5>
+            <p>{{ abouts.body}}</p>
+        
             
             <button type="button">Let's Talk</button>
         </div>

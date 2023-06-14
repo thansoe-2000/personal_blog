@@ -13,22 +13,41 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
-    <body>
+    <body style="background-color: rgb(33, 32, 32);">
 
     <!-- start navbar -->
         <nav style="background-color: black;">
 
             <h2 class="logo">Than<span>Soe</span></h2>
             <ul>
-                <li>
-                    {% url 'heropage' as url %}
-                    <a class="{% if request.path == url %}text-info{% endif %}" href="{% url 'heropage' %}">Home</a>
+               {% url 'heropage' as url %}
+                <li class='{% if request.path == url  %}active{% endif %}'>
+                    <a href="{% url 'heropage' %}">Home</a>
                 </li>
-                <li><a href="{% url 'aboutpage' %}">About Me</a></li>
-                <li><a href="{% url 'servicepage' %}">Services</a></li>
-                <li><a href="{% url 'gallarypage' %}">Gallary</a></li>
-                <li><a href="{% url 'skillpage' %}">Skill</a></li>
-                <li><a href="{% url 'contactpage' %}">Contact</a></li>
+
+                {% url 'aboutpage' as url %}
+                <li class='{% if request.path == url %}active{% endif %}'>
+                    <a href="{% url 'aboutpage' %}">About</a>
+                </li>
+
+                {% url 'servicepage' as url %}
+                <li class='{% if request.path == url %}active{% endif %}'>
+                    <a href="{% url 'servicepage' %}">Services</a>
+                </li>
+                {% url 'gallarypage' as url %}
+                <li class='{% if request.path == url %}active{% endif %}'>
+                    <a href="{% url 'gallarypage' %}">Gallary</a>
+                </li>
+
+                {% url 'skillpage' as url %}
+                <li class='{% if request.path == url %}active{% endif %}'>
+                    <a href="{% url 'skillpage' %}">Skill</a>
+                </li>
+
+                {% url 'contactpage' as url %}
+                <li class='{% if request.path == url %}active{% endif %}'>
+                    <a href="{% url 'contactpage' %}">Contact</a>
+                </li>
             </ul>
             <a href="#" class="btn">Subscribe</a>
         </nav>

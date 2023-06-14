@@ -5,6 +5,9 @@
     font-family: Comic Sans MS;
     box-sizing: border-box;
 }
+.active{
+   background-color:#f9004d
+}
  .hero{
    height: 100vh;
    width: 100%;
@@ -48,11 +51,9 @@
   
  }
 
- nav ul li a:hover{
-    color: #f9004d;
-    letter-spacing: 1px;
-   
- }
+
+
+
 
  .btn{
     background-color: #f9004d;

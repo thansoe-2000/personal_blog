@@ -4,14 +4,14 @@
 {% block content %}
 
 <!-- Hero section -->
-{% for hero in heros %}
-<div class="hero" style="background-image: url('{{ hero.background.url }}')">
+
+<div class="hero" style="background-image: url('{{ heros.background.url }}')">
     <!-- start content -->
     <div class="content">
         <h4>Hello, my name is</h4>
-        <h1>{{ hero.name }}</h1>
-        <h3>{{ hero.carrier }}</h3>
-{% endfor %}
+        <h1>{{ heros.name }}</h1>
+        <h3>{{ heros.carrier }}</h3>
+
         
 
         <div class="newslatter">
@@ -30,14 +30,12 @@
 <!-- About section -->
 <section class="about">
     <div class="main">
-        {% for about in abouts %}
-        <img src="{{ about.image.url }}" alt="">
+        <img src="{{ abouts.image.url }}" alt="">
         <div class="about-text">
             <h2>About Me</h2>
-            <h5>{{ about.title }}</h5>
-            <p>{{ about.body}} </p> 
+            <h5>{{ abouts.title }}</h5>
+            <p>{{ abouts.body}} </p> 
 
-        {% endfor %}
             
             <button type="button">Let's Talk</button>
         </div>

@@ -5,8 +5,8 @@ def main(request):
     return render(request, 'pages/main.html')
 
 def hero(request):
-    heros = Hero.objects.all()
-    abouts = About.objects.all()
+    heros = Hero.objects.first()
+    abouts = About.objects.first()
     context = {
         'heros':heros,
         'abouts':abouts
@@ -14,7 +14,7 @@ def hero(request):
     return render(request, 'pages/hero.html', context)
 
 def about(request):
-    abouts = About.objects.all()
+    abouts = About.objects.first()
     context = {
         'abouts':abouts
     }
