@@ -6,7 +6,8 @@
     box-sizing: border-box;
 }
 .active{
-   background-color:#f9004d
+   background-color:#f9004d;
+   border-radius: 30px
 }
  .hero{
    height: 100vh;
@@ -352,5 +353,7 @@
    bottom: 40px;
    font-size: 14px;
 }
+
+
 
   /* end footer css */

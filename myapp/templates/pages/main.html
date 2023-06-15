@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=\, initial-scale=1.0">
         <title>Than Than Soe</title>
         <link rel="stylesheet" href="{% static 'style/port.css' %}">
+        <link rel="stylesheet" href="{% static 'style/gallary.css' %}">
        
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,10 +31,10 @@
                     <a href="{% url 'aboutpage' %}">About</a>
                 </li>
 
-                {% url 'servicepage' as url %}
+                {% comment %} {% url 'servicepage' as url %}
                 <li class='{% if request.path == url %}active{% endif %}'>
                     <a href="{% url 'servicepage' %}">Services</a>
-                </li>
+                </li> {% endcomment %}
                 {% url 'gallarypage' as url %}
                 <li class='{% if request.path == url %}active{% endif %}'>
                     <a href="{% url 'gallarypage' %}">Gallary</a>

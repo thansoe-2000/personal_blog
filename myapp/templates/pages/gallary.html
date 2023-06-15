@@ -1,4 +1,20 @@
 {% extends 'pages/main.html' %}
+
 {% block content %}
-<h2>Gallary</h2>
+
+
+
+<div class="gallary">
+    
+    
+    {% for gallary in gallarys %}
+    
+        <img src="{{ gallary.image.url }}" alt="" >
+   
+    {% endfor %}
+</div>
+           
+
+
+
 {% endblock content %}

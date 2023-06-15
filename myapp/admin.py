@@ -18,7 +18,11 @@ class CategoryAdmin(admin.ModelAdmin):
 class GallaryAdmin(admin.ModelAdmin):
     list_display = [ 'id', 'category', 'title', 'image']
 
+
+class SkillAdmin(admin.ModelAdmin):
+    list_display = [ 'id', 'title', 'body']
 admin.site.register(Hero, HeroAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Gallary, GallaryAdmin)
+admin.site.register(Skill, SkillAdmin)

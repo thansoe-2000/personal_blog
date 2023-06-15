@@ -9,7 +9,7 @@
     <!-- start content -->
     <div class="content">
         <h4>Hello, my name is</h4>
-        <h1>{{ heros.name }}</h1>
+        <h1>{{ heros.name }}</h1> <br>
         <h3>{{ heros.carrier }}</h3>
 
         
@@ -30,12 +30,14 @@
 <!-- About section -->
 <section class="about">
     <div class="main">
+        
         <img src="{{ abouts.image.url }}" alt="">
         <div class="about-text">
             <h2>About Me</h2>
             <h5>{{ abouts.title }}</h5>
             <p>{{ abouts.body}} </p> 
 
+        
             
             <button type="button">Let's Talk</button>
         </div>
@@ -47,11 +49,11 @@
 <!-- services -->
 <div class="service">
     <div class="title">
-        <h2>Our services</h2>
+        <h2>Skill</h2>
     </div>
 
     <div class="box">
-        <div class="card">
+        <div class="card" style='background-color: dark;'>
             <i class="fas fa-bars"></i>
             <h5>Web Development</h5>
             <div class="pra">
@@ -94,7 +96,7 @@
 <!-- Contact me -->
 <div class="contact">
     <p>Let Me Get You A Beautiful Website.</p>
-    <a href="#" class="button-two">Hire Me</a>
+    <a href="{% url 'contactpage' %}" class="button-two">Hire Me</a>
 </div>
 <!-- end contact -->
 
