@@ -22,11 +22,7 @@ class GallaryAdmin(admin.ModelAdmin):
 class SkillAdmin(admin.ModelAdmin):
     list_display = [ 'id', 'title', 'body']
 
-class ContactAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'email', 'subject', 'message']
 
-class ContactInfoAdmin(admin.ModelAdmin):
-    list_display = ['id', 'address', 'phone', 'email', 'website']
 
 
 admin.site.register(Hero, HeroAdmin)
@@ -34,5 +30,4 @@ admin.site.register(About, AboutAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Gallary, GallaryAdmin)
 admin.site.register(Skill, SkillAdmin)
-admin.site.register(Contact, ContactAdmin)
-admin.site.register(ContactInfo, ContactInfoAdmin)
+

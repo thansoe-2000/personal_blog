@@ -46,10 +46,10 @@
                     <a href="{% url 'skillpage' %}">Skill</a>
                 </li>
 
-                {% url 'contactpage' as url %}
-                <li class='{% if request.path == url %}active{% endif %}'>
+                {% comment %} {% url 'contactpage' as url %} {% endcomment %}
+                {% comment %} <li class='{% if request.path == url %}active{% endif %}'>
                     <a href="{% url 'contactpage' %}">Contact</a>
-                </li>
+                </li> {% endcomment %}
             </ul>
             <a href="#" class="btn">Subscribe</a>
         </nav>

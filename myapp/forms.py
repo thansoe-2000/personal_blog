@@ -17,3 +17,8 @@ class AboutForm(ModelForm):
     class Meta:
         model = About
         fields ="__all__"
+
+class SkillForm(ModelForm):
+    class Meta:
+        model = Skill
+        fields = "__all__"

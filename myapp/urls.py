@@ -8,7 +8,6 @@ urlpatterns = [
     # path('service/', views.service, name='servicepage'),
     path('skill/', views.skill, name='skillpage'),
     path('gallary/', views.gallary, name='gallarypage'),
-    path('contact/', views.contact, name='contactpage'),
 
 
     # back admin-dashboard
@@ -16,4 +15,5 @@ urlpatterns = [
     path('category/', views.category, name='category_page'),
     path('back/hero/', views.adminhero, name='hero_admin'),
     path('back/about/', views.adminabout, name='about_admin'),
+    path('back/skill/', views.skilladmin, name='skill_admin'),
 ]
