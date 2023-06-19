@@ -1,0 +1,56 @@
+{% extends 'back/index.html' %}
+{% block content %}
+<div class="row" style="margin-left: 20px;">
+    <div class="col col-md-4">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="title mb-3">
+                <label for="" class="form-label">Title</label>
+                <input type="text" name="title" id="" class="form-control" placeholder="Enter Title">
+            </div>
+
+            <div class="image mb-3">
+                <label for="" class="form-label">Image</label>
+                <input type="file" name="image" id="" class="form-control" >
+            </div>
+
+            <div class="body mb-3">
+                <label for="" class="form-label">Body</label>
+                <textarea name="body" id="" cols="60" rows="10" placeholder="Description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </form>
+    </div>
+    <div class="col col-md-4">
+        <h1>About </h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                    <th>Image</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                {% for about in abouts %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ about.title }}</td>
+                    <td>{{ about.body }}</td>
+                    <td>
+                        <img src="{{ about.image.url }}" alt="" width="100%" height="50px">
+                    </td>
+                  </tr>
+                {% endfor %}
+                
+                
+            </tbody>
+
+        </table>
+    </div>
+    <div class="col col-md-4"></div>
+</div>
+
+{% endblock content %}

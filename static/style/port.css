@@ -10,7 +10,7 @@
    border-radius: 30px
 }
  .hero{
-   height: 100vh;
+   height: 80vh;
    width: 100%;
    background-repeat:no-repeat;
    background-size: cover;
@@ -188,8 +188,8 @@
   }
   /* end about comment */
 
-  /* start service */
-  .service{
+  /* start skill */
+  .skill{
    background: #101010;
    width: 100%;
    padding: 100px 0px;
@@ -199,7 +199,7 @@
    color: white;
    font-size: 75px;
    width: 1130px;
-   margin: 20px auto;
+   margin: 30px auto;
    text-align: center;
   }
   .box{
@@ -213,7 +213,7 @@
    height: 384px;
    width: 335px;
    padding: 20px 35px;
-   background: #191919;
+   background: #3b3a3a;
    border-radius: 20px;
    margin: 15px;
    position: relative;
@@ -240,6 +240,7 @@
    font-size: 16px;
    line-height: 27px;
    margin-bottom: 25px;
+
   }
 
   .card .button{
@@ -258,43 +259,9 @@
    border: 2px solid #f9004d;
    cursor: pointer;
   }
-  /* end service */
+  /* end skill */
 
-  /* start contact css */
-  .contact{
-   width: 100%;
-   height: 290px;
-   background: #191919;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   justify-content: center;
-  }
-
-  .contact p{
-   color: white;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 25px;
-  }
-
-  .contact .button-two{
-   background-color: #f9004d;
-   color: white;
-   text-decoration: none;
-   border: 2px solid transparent;
-   font-weight: bold;
-   padding: 9px 22px;
-   border-radius: 30px;
-   transition: .4s;
-  }
-
-  .contact .button-two:hover{
-   background-color: transparent;
-   border: 2px solid #f9004d;
-   cursor: pointer;
-  }
-  /* end contact css */
+ 
 
   /* start footer css */
   footer{

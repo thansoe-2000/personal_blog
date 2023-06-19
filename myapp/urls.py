@@ -13,4 +13,7 @@ urlpatterns = [
 
     # back admin-dashboard
     path('dashboard/', views.index, name='index_dashboard'),
+    path('category/', views.category, name='category_page'),
+    path('back/hero/', views.adminhero, name='hero_admin'),
+    path('back/about/', views.adminabout, name='about_admin'),
 ]
