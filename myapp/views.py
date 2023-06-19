@@ -7,7 +7,7 @@ def main(request):
 def hero(request):
     heros = Hero.objects.first()
     abouts = About.objects.first()
-    skills = Skill.objects.all()
+    skills = Skill.objects.all()[0:3]
     context = {
         'heros':heros,
         'abouts':abouts,
@@ -26,7 +26,7 @@ def about(request):
 #     return render(request, 'pages/services.html')
 
 def skill(request):
-    skills = Skill.objects.first()
+    skills = Skill.objects.all()[0:3]
     context = {
         'skills':skills
     }
