@@ -7,7 +7,13 @@ def home(request):
     return render(request, 'projects/home.html')
 
 def about(request):
-    return render(request, 'projects/about.html')
+    experiences = Experience.objects.all()
+    context = {
+        'experiences':experiences
+    }
+    return render(request, 'projects/about.html', context)
+
+    
     
 
 def project(request):
