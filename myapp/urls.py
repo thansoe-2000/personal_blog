@@ -3,11 +3,11 @@ from . import views
 
 urlpatterns = [
     path('main-page', views.main, name='main_page'),
-    path('', views.hero, name='heropage'),
+    path('', views.home, name='homepage'),
     path('about/', views.about, name='aboutpage'),
-    # path('service/', views.service, name='servicepage'),
-    path('skill/', views.skill, name='skillpage'),
-    path('gallary/', views.gallary, name='gallarypage'),
+    path('project/', views.project, name='projectpage'),
+    path('contact/', views.contact, name='contactpage'),
+    
 
 
     # back admin-dashboard
