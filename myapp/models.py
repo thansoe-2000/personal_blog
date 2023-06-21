@@ -1,47 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Hero(models.Model):
-    name = models.CharField(max_length=20)
-    background = models.ImageField(upload_to='hero-image')
-    carrier = models.CharField(max_length=50)
-    created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)
 
-    
-    class  Meta:
-        ordering=['-created_at']
-
-    def __str__(self):
-        return self.name
-
-class About(models.Model):
-    title = models.CharField(max_length=50)
-    body = models.TextField()
-    image = models.ImageField(upload_to='aboutimage')
-    created_at = models.DateTimeField(auto_now_add=True,blank=True,null=True)
-    updated_at = models.DateTimeField(auto_now=True,blank=True,null=True)
-
-    class Meta:
-        ordering = ['-created_at']
-        
-    def __str__(self):
-        return self.title
-
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name
-
-
-
-class Skill(models.Model):
-    title = models.CharField(max_length=50)
-    body = models.TextField()
-
-    def __str__(self):
-        return self.title
     
 
 
