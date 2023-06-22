@@ -1,5 +1,5 @@
 from django.db import models
-
+from tinymce import models as tinymce_models
 # Create your models here.
 
 class Experience(models.Model):
@@ -7,7 +7,7 @@ class Experience(models.Model):
     carrier = models.CharField(max_length=100)
     company = models.CharField(max_length=200)
     location = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
+    description = tinymce_models.HTMLField(null=True, blank=True)
 
     def __str__(self):
         return self.carrier

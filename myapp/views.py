@@ -26,7 +26,20 @@ def index(request):
 
 
 def experience(request):
-    return render(request, 'backend/experience.html')
+    page = 'create_experience'
+    experiences = Experience.objects.all()
+    form = ExperienceForm()
+    if request.method == 'POST':
+        form = ExperienceForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('experience_page')
+    context = {
+        'experiences':experiences,
+        'form':form,
+        'page':page
+    }
+    return render(request, 'backend/experience.html', context)
 
 
 

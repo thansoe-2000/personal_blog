@@ -1,4 +1,109 @@
 {% extends "backend/index.html" %}
 {% block content %}
-<h1>Experience</h1>
+<script src="https://cdn.tiny.cloud/1/ya9yihier97ka1vae1q6z2n1gzz8jejrw1o088mll0axglm9/tinymce/6/tinymce.min.js"
+referrerpolicy="origin"></script>
+
+<div class="row">
+    
+    <div class="col col-md-5">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Vertical Form</h5>
+
+              <!-- Vertical Form -->
+              <form class="row g-3" method="POST">
+                {% csrf_token %}
+                <div class="col-12">
+                  <label for="inputTime" class="form-label">Time</label>
+                  <input type="text" class="form-control" id="inputNanme4" name="time">
+                </div>
+                <div class="col-12">
+                  <label for="inputCarrier" class="form-label">Carrier</label>
+                  <input type="text" class="form-control" id="inputEmail4" name="carrier">
+                </div>
+                <div class="col-12">
+                  <label for="inputCompany" class="form-label">Company</label>
+                  <input type="text" class="form-control" id="inputPassword4" name="company">
+                </div>
+                <div class="col-12">
+                  <label for="inputLocaton" class="form-label">Location</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="location">
+                </div>
+
+                <textarea name="description">
+                    Welcome to TinyMCE!
+                </textarea>
+                <script>
+                    tinymce.init({
+                      selector: 'textarea',
+                      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                      tinycomments_mode: 'embedded',
+                      tinycomments_author: 'Author name',
+                    
+                    });
+              
+                  </script>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-secondary">Reset</button>
+                </div>
+              </form><!-- Vertical Form -->
+
+            </div>
+       
+          </div>
+    </div>
+
+   
+    
+    
+    
+    <div class="col col-md-7">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Time</th>
+                    <th>Carrier</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for experience in experiences %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ experience.time }}</td>
+                    <td>{{ experience.carrier }}</td>
+                    <td>{{ experience.company }}</td>
+                    <td>{{ experience.location }}</td>
+                    <td>{{ experience.description|safe}}</td>
+                    <td>
+                        <a href="#"> efsfsf</a>
+                    </td>
+                    
+                </tr>
+                  
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+  
+  
+
+
+
+
+
+
+
 {% endblock content %}
