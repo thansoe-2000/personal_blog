@@ -1,59 +1,114 @@
 {% extends "backend/index.html" %}
 {% block content %}
-<script src="https://cdn.tiny.cloud/1/ya9yihier97ka1vae1q6z2n1gzz8jejrw1o088mll0axglm9/tinymce/6/tinymce.min.js"
-referrerpolicy="origin"></script>
+
 
 <div class="row">
     
-    <div class="col col-md-5">
-        <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Vertical Form</h5>
+  {% if page == 'create_experience' %}
+  <div class="col col-md-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Experience Form</h5>
 
-              <!-- Vertical Form -->
-              <form class="row g-3" method="POST">
-                {% csrf_token %}
-                <div class="col-12">
-                  <label for="inputTime" class="form-label">Time</label>
-                  <input type="text" class="form-control" id="inputNanme4" name="time">
-                </div>
-                <div class="col-12">
-                  <label for="inputCarrier" class="form-label">Carrier</label>
-                  <input type="text" class="form-control" id="inputEmail4" name="carrier">
-                </div>
-                <div class="col-12">
-                  <label for="inputCompany" class="form-label">Company</label>
-                  <input type="text" class="form-control" id="inputPassword4" name="company">
-                </div>
-                <div class="col-12">
-                  <label for="inputLocaton" class="form-label">Location</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="location">
-                </div>
 
-                <textarea name="description">
-                    Welcome to TinyMCE!
-                </textarea>
-                <script>
-                    tinymce.init({
-                      selector: 'textarea',
-                      plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-                      toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                      tinycomments_mode: 'embedded',
-                      tinycomments_author: 'Author name',
-                    
-                    });
-              
-                  </script>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- Vertical Form -->
-
+          <!-- Vertical Form -->
+          <form class="row g-3" method="POST">
+            {% csrf_token %}
+            <div class="col-12">
+              <label for="inputTime" class="form-label">Time</label>
+              <input type="text" class="form-control" id="inputNanme4" name="time">
             </div>
-       
-          </div>
-    </div>
+            <div class="col-12">
+              <label for="inputCarrier" class="form-label">Carrier</label>
+              <input type="text" class="form-control" id="inputEmail4" name="carrier">
+            </div>
+            <div class="col-12">
+              <label for="inputCompany" class="form-label">Company</label>
+              <input type="text" class="form-control" id="inputPassword4" name="company">
+            </div>
+            <div class="col-12">
+              <label for="inputLocaton" class="form-label">Location</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="location">
+            </div>
+
+            <textarea name="description">
+                Welcome to TinyMCE!
+            </textarea>
+            <script>
+                tinymce.init({
+                  selector: 'textarea',
+                  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                  tinycomments_mode: 'embedded',
+                  tinycomments_author: 'Author name',
+                
+                });
+          
+              </script>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+          </form><!-- Vertical Form -->
+
+        </div>
+   
+      </div>
+  </div>
+
+  {% else %}
+  <div class="col col-md-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit Form</h5>
+
+
+          <!-- Vertical Form -->
+          <form class="row g-3" method="POST">
+            {% csrf_token %}
+            <div class="col-12">
+              <label for="inputTime" class="form-label">Time</label>
+              <input type="text" class="form-control" id="inputNanme4" name="time" value='{{ experience.time }}'>
+            </div>
+            <div class="col-12">
+              <label for="inputCarrier" class="form-label">Carrier</label>
+              <input type="text" class="form-control" id="inputEmail4" name="carrier" value='{{ experience.carrier }}'>
+            </div>
+            <div class="col-12">
+              <label for="inputCompany" class="form-label">Company</label>
+              <input type="text" class="form-control" id="inputPassword4" name="company" value='{{ experience.company }}'>
+            </div>
+            <div class="col-12">
+              <label for="inputLocaton" class="form-label">Location</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="location" value='{{ experience.location }}'>
+            </div>
+
+            <textarea name="description" value='{{ experience.description }}'>
+              {{ experience.description }}
+            </textarea>
+            <script>
+                tinymce.init({
+                  selector: 'textarea',
+                  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+                  toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+                  tinycomments_mode: 'embedded',
+                  tinycomments_author: 'Author name',
+                
+                });
+          
+              </script>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+          </form><!-- Vertical Form -->
+
+        </div>
+   
+      </div>
+</div>
+  {% endif %}
+    
 
    
     
@@ -83,7 +138,7 @@ referrerpolicy="origin"></script>
                     <td>{{ experience.location }}</td>
                     <td>{{ experience.description|safe}}</td>
                     <td>
-                        <a href="#"> efsfsf</a>
+                        <a href="{% url 'experience_edit' experience.id%}"> efsfsf</a>
                     </td>
                     
                 </tr>
