@@ -16,5 +16,17 @@ class EducationForm(ModelForm):
         widgets = {'description': TinyMCE(attrs={'cols': 50, 'rows': 30})}
         
 
+class Pro_skillForm(ModelForm):
+    class Meta:
+        model = Pro_skill
+        fields = "__all__"
+        widgets = {'name':forms.TextInput(attrs={'placeholder':'Enter pro skills'})}
+
+class LanguageForm(ModelForm):
+    class Meta:
+        model = Language
+        fields = "__all__"
+        widgets = { 'name':forms.TextInput(attrs={'placeholder':'Enter language'})}
+
 
 

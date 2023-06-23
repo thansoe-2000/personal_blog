@@ -1,0 +1,92 @@
+{% extends "backend/index.html" %}
+{% block content %}
+<div class="row">
+    
+    {% if page == 'proskill_create' %}
+    <div class="col col-md-5">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Professional Skills Form</h5>
+  
+            <!-- Vertical Form -->
+            <form class="row g-3" method="POST" >
+              {% csrf_token %}
+              {{ form }}
+  
+            
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Create</button>
+              <button class="btn btn-danger">Cancle</button>
+
+            </div>
+            </form><!-- Vertical Form -->
+  
+          </div>
+     
+        </div>
+    </div>
+  
+    {% else %}
+    <div class="col col-md-5">
+      <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Edit Professional Skills</h5>
+  
+            <!-- Vertical Form -->
+            <form class="row g-3" method="POST">
+              {% csrf_token %}
+            {{ form }}
+  
+            
+              
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Edit</button>
+              <button onclick="history.back()" class="btn btn-danger">Cancle</button>
+
+            </div>
+            </form><!-- Vertical Form -->
+  
+          </div>
+     
+        </div>
+    </div>
+    {% endif %}
+      
+  
+     
+      
+      
+    
+      <!-- table   -->
+      <div class="col col-md-7">
+          <table class="table table-bordered table-hover">
+              <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Actions</th>
+                    </tr>
+                </thead>
+                     
+                      
+  
+              <tbody>
+                  {% for proskill in proskills %}
+                  <tr>
+                      <td>{{ forloop.counter }}</td>
+                      <td>{{ proskill.name }}</td>
+                      
+                      <td>
+                          <a href="#" class="btn btn-primary"> Edit</a>
+                      </td>
+                      
+                  </tr>
+                    
+                  {% endfor %}
+              </tbody>
+  
+          </table>
+      </div>
+</div>
+
+{% endblock content %}

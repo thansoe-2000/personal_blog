@@ -23,4 +23,15 @@ class Education(models.Model):
         return self.major
  
 
+class Pro_skill(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Language(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
 

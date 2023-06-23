@@ -43,7 +43,7 @@
             
           <div class="text-center">
             <button type="submit" class="btn btn-primary">Edit</button>
-            <button type="reset" class="btn btn-secondary">Reset</button>
+            <button onclick='history.back()' class="btn btn-secondary">Cancle</button>
           </div>
           </form><!-- Vertical Form -->
 
@@ -82,7 +82,7 @@
                     <td>{{ education.major }}</td>
                     <td>{{ education.description|safe }}</td>
                     <td>
-                        <a href="{% url 'edit_edu'  education.id %}"> Edit</a>
+                        <a href="{% url 'edit_edu'  education.id %}" class='btn btn-success'> Edit</a>
                     </td>
                     
                 </tr>

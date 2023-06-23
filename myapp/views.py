@@ -9,9 +9,14 @@ def home(request):
 def about(request):
     educations = Education.objects.all()[0:3]
     experiences = Experience.objects.all()[0:3]
+    languages = Language.objects.all()[0:5]
+    proskills = Pro_skill.objects.all()[0:5]
+
     context = {
         'experiences':experiences,
-        'educations':educations
+        'educations':educations,
+        'languages':languages,
+        'proskills':proskills
     }
     return render(request, 'projects/about.html', context)
 
@@ -97,4 +102,54 @@ def edit_edu(request, pk):
     return render(request, 'backend/education.html', context)
 
 
+def language(request):
+    page = 'create_language'
+    form = LanguageForm()
+    languages = Language.objects.all()
+    if request.method == 'POST':
+        form = LanguageForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('language_page')
+    context = {
+        'page':page,
+        'form':form,
+        'languages':languages,
+        
+    }
+    return render(request, 'backend/language.html', context)
 
+def edit_language(request, pk):
+    page = 'edit_language'
+    language = Language.objects.get(id=pk)
+    form = LanguageForm(instance=language)
+    languages = Language.objects.all()
+    if request.method == 'POST':
+        form = LanguageForm(request.POST, instance=language)
+        if form.is_valid():
+            form.save()
+        return redirect('language_page')
+    context = {
+        'page':page,
+        'form':form,
+        'language':language,
+        'languages':languages
+    }
+    return render(request, 'backend/language.html', context)
+
+
+def proskill(request):
+    page = 'proskill_create'
+    form = Pro_skillForm()
+    proskills = Pro_skill.objects.all()
+    if request.method == 'POST':
+        form = Pro_skillForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('proskill_page')
+    context = {
+        'page':page,
+        'form':form,
+        'proskills':proskills
+    }
+    return render(request, 'backend/pro_skill.html', context)
