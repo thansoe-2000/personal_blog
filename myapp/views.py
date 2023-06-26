@@ -29,7 +29,18 @@ def project(request):
     return render(request, 'projects/projects.html', context)
     
 def contact(request):
-    return render(request, 'projects/contact.html')
+    contact = Contact.objects.all()
+    form = ContactForm()
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('contactpage')
+    context  = {
+        'contact':contact,
+        'form':form
+    }
+    return render(request, 'projects/contact.html', context)
 
 
 # backend
@@ -175,3 +186,6 @@ def backend_project(request):
         'projects':projects
     }
     return render(request, 'backend/project.html', context)
+
+def backend_contact(request):
+    return render(request, 'backend/contact.html')

@@ -1,5 +1,6 @@
 from . models import *
 from django.forms import ModelForm
+
 from tinymce.widgets import TinyMCE
 from django import forms
 
@@ -40,3 +41,7 @@ class Project_Form(ModelForm):
             'name':forms.TextInput(attrs={'placeholder':'Enter project name '})
             }
 
+class ContactForm(ModelForm):
+    class Meta:
+        model = Contact
+        fields = "__all__"

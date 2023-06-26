@@ -27,6 +27,9 @@ urlpatterns = [
 
     # projects
     path('dashboard/project/', views.backend_project, name='project_page'),
+
+    # contact
+    path('dashboard/contact', views.backend_contact, name='backend_contact')
     
 
 
