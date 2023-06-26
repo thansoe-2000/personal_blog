@@ -16,12 +16,17 @@ def about(request):
         'experiences':experiences,
         'educations':educations,
         'languages':languages,
-        'proskills':proskills
+        'proskills':proskills,
+        
     }
     return render(request, 'projects/about.html', context)
 
 def project(request):
-    return render(request, 'projects/projects.html')
+    projects = Project.objects.all()
+    context = {
+        'projects':projects
+    }
+    return render(request, 'projects/projects.html', context)
     
 def contact(request):
     return render(request, 'projects/contact.html')
@@ -153,3 +158,20 @@ def proskill(request):
         'proskills':proskills
     }
     return render(request, 'backend/pro_skill.html', context)
+
+
+def backend_project(request):
+    page = 'create_project'
+    form = Project_Form()
+    projects = Project.objects.all()
+    if request.method == 'POST':
+        form = Project_Form(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+        return redirect('project_page')
+    context = {
+        'page':page,
+        'form':form,
+        'projects':projects
+    }
+    return render(request, 'backend/project.html', context)

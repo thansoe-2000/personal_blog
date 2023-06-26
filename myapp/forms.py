@@ -30,3 +30,13 @@ class LanguageForm(ModelForm):
 
 
 
+class Project_Form(ModelForm):
+
+    class Meta:
+        model = Project
+        fields = "__all__"
+        widgets = {
+            'description': TinyMCE(attrs={'cols':20, 'rows':20}),
+            'name':forms.TextInput(attrs={'placeholder':'Enter project name '})
+            }
+

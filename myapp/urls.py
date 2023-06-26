@@ -24,6 +24,9 @@ urlpatterns = [
 
     # pro skill
     path('dashboard/proskill', views.proskill, name='proskill_page'),
+
+    # projects
+    path('dashboard/project/', views.backend_project, name='project_page'),
     
 
 

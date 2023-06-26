@@ -1,0 +1,173 @@
+{% extends "backend/index.html" %}
+{% block content %}
+
+<script src="https://cdn.tiny.cloud/1/ya9yihier97ka1vae1q6z2n1gzz8jejrw1o088mll0axglm9/tinymce/6/tinymce.min.js"
+  referrerpolicy="origin"></script>
+<div class="row">
+    
+  {% if     page == 'create_project'  %}
+  <div class="col col-md-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Project Form</h5>
+
+          <!-- Vertical Form -->
+          <form class="row g-3" method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{ form }}
+
+          
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+          </div>
+          </form><!-- Vertical Form -->
+
+        </div>
+   
+      </div>
+  </div>
+
+  {% else %}
+  <div class="col col-md-5">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Edit Form</h5>
+
+          <!-- Vertical Form -->
+          <form class="row g-3" method="POST">
+            {% csrf_token %}
+          {{ form }}
+
+          
+            
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <button onclick='history.back()' class="btn btn-secondary">Cancle</button>
+          </div>
+          </form><!-- Vertical Form -->
+
+        </div>
+   
+      </div>
+  </div>
+  {% endif %}
+    
+
+   
+    
+    
+    
+    <div class="col col-md-7">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for project in projects %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ project.name }}</td>
+                    <td>
+                      <img src="{{ project.image.url }}" alt="" height="50px">
+                    </td>
+                    <td>{{ project.description|safe }}</td>
+                    <td>
+                        <a href="#" class='btn btn-success'> Edit</a>
+                    </td>
+                   
+                    
+                </tr>
+                  
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+    tinycomments_mode: 'embedded',
+    tinycomments_author: 'Author name',
+  
+  });
+
+</script>
+{% endblock content %}
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+
+
+  
+
+
+
+
+
+
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      

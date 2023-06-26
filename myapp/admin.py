@@ -15,7 +15,8 @@ class LanguageAdmin(admin.ModelAdmin):
     list_display =['id', 'name']
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name','description', 'image']
+    list_display = ['id', 'name', 'image', 'description']
+
 admin.site.register(Education, EducationAdmin)
 admin.site.register(Experience, ExperienceAdmin)
 admin.site.register(Pro_skill, Pro_skillAdmin)
