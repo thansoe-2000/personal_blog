@@ -35,3 +35,11 @@ class Language(models.Model):
     def __str__(self):
         return self.name
 
+class Project(models.Model):
+    name = models.CharField(max_length=100)
+    description = HTMLField()
+    image = models.ImageField(upload_to='project-image')
+
+    def __str__(self):
+        return self.name
+
