@@ -138,7 +138,7 @@
                     <td>{{ experience.location }}</td>
                     <td>{{ experience.description|safe}}</td>
                     <td>
-                        <a href="{% url 'experience_edit' experience.id %}" class='btn btn-success'>Edit</a>
+                        <a href="{% url 'experience_edit' experience.slug %}" class='btn btn-success'>Edit</a>
                     </td>
                     
                 </tr>

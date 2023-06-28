@@ -10,9 +10,9 @@ urlpatterns = [
     
 
     # backend
-    path('dashboard/', views.index, name='indexpage'),
+    path('personalblog/dashboard/', views.index, name='indexpage'),
     path('dashboard/experience', views.experience, name='experience_page'),
-    path('dashboard/experience/edit<str:pk>/', views.experience_edit, name='experience_edit'),
+    path('dashboard/experience/<slug:slug>/edit/', views.experience_edit, name='experience_edit'),
 
     # education 
     path('dashboard/education', views.education, name='education_page'),

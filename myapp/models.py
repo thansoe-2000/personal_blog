@@ -1,5 +1,6 @@
 from django.db import models
 from tinymce.models import HTMLField
+from autoslug import AutoSlugField
 # Create your models here.
 
 class Experience(models.Model):
@@ -8,9 +9,14 @@ class Experience(models.Model):
     company = models.CharField(max_length=200)
     location = models.CharField(max_length=100)
     description = HTMLField(null=True, blank=True)
+    slug = AutoSlugField(populate_from='carrier', unique=True, null=True, default=None)
 
     def __str__(self):
         return self.carrier
+    
+    class Meta:
+        unique_together = ('carrier', 'slug')
+
 
 class Education(models.Model):
     time = models.CharField(max_length=100)

@@ -64,10 +64,10 @@ def experience(request):
     }
     return render(request, 'backend/experience.html', context)
 
-def experience_edit(request, pk):
+def experience_edit(request, slug):
     page = 'edit_experience'
     experiences = Experience.objects.all()
-    experience = Experience.objects.get(id=pk)
+    experience = Experience.objects.get(slug=slug)
     form = ExperienceForm(instance=experience)
     if request.method == 'POST':
         form = ExperienceForm(request.POST, instance=experience)
